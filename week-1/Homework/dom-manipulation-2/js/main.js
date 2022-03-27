@@ -1,3 +1,5 @@
+///-------------Part 1---------------///
+
 // Selecting buttons
 
 const selectBlueButton = document.querySelector("#blueBtn");
@@ -6,7 +8,6 @@ const selectGreenButton = document.querySelector("#greenBtn");
 const jumbotron = document.querySelector(".jumbotron");
 const donateBikeButton = document.querySelector(".buttons .btn-primary ");
 const volunteerButton = document.querySelector(".buttons .btn-secondary ");
-console.log(volunteerButton);
 
 // Adding event listener for Blue Button
 selectBlueButton.addEventListener("click", () => {
@@ -30,3 +31,37 @@ selectGreenButton.addEventListener("click", () => {
   donateBikeButton.style.backgroundColor = "black";
   volunteerButton.style.backgroundColor = "#8c9c08";
 });
+
+///-------------Part 2---------------///
+
+// STEP 1 Selecting DOM elements
+const selectForm = document.querySelector("form");
+const selectSubmitButton = document.querySelector("form button");
+const inputEmail = document.querySelector("#exampleInputEmail1");
+const inputName = document.querySelector("#example-text-input");
+const describeYourselfArea = document.querySelector("#exampleTextarea");
+
+// STEP 2 Creating Event Handler
+function onSubmit(e) {
+  {
+    e.preventDefault();
+    if (
+      inputEmail.value.trim().length === 0 ||
+      inputEmail.value.trim().includes("@") === false
+    ) {
+      inputEmail.style.backgroundColor = "red";
+    } else if (inputName.value.trim().length === 0) {
+      inputName.style.backgroundColor = "red";
+    } else if (describeYourselfArea.value.trim().length === 0) {
+      describeYourselfArea.style.backgroundColor = "red";
+    } else {
+      alert("Thank you for filling out the form");
+      inputEmail.value = "";
+      inputName.value = "";
+      describeYourselfArea.value = "";
+    }
+  }
+}
+
+/// Adding event listener
+selectSubmitButton.addEventListener("click", onSubmit);
