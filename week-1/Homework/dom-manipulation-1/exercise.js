@@ -1,30 +1,27 @@
-/*
-Task 1
-=======
-Write JavaScript below that logs:
+//Task 1
+//=======
+/*Write JavaScript below that logs:
     1. all the "p" element nodes of the document,
-    --> should log a list of nodes with a length of 6 
-    
-    const paragraphEl = document.querySelectorAll("p");
-    console.log(paragraphEl);
+    --> should log a list of nodes with a length of 6 */
 
-    2. the first div element node
-    --> should log the ".site-header" node
-    const firstDiv = document.querySelector(".site-header");
-    console.log(firstDiv);
+const paragraphEl = document.querySelectorAll("p");
+console.log(paragraphEl);
 
-    3. the element with id "jumbotron-text"
-    --> should log the "#jumbotron-text" node
-    const elementJumbotron = document.querySelector("#jumbotron-text");
-    console.log(elementJumbotron);
+/*2. the first div element node
+    --> should log the ".site-header" node*/
+const firstDiv = document.querySelector(".site-header");
+console.log(firstDiv);
 
-    4. all the "p" elements of contained inside  the .primary-content element node
-    --> should log a list of nodes with a length of 3
-    const primary = document.querySelector(".primary-content");
-    const parEl = primary.querySelectorAll("p");
-    console.log(parEl);
+/*3. the element with id "jumbotron-text"
+    --> should log the "#jumbotron-text" node*/
+const elementJumbotron = document.querySelector("#jumbotron-text");
+console.log(elementJumbotron);
 
-*/
+/*4. all the "p" elements of contained inside  the .primary-content element node
+    --> should log a list of nodes with a length of 3*/
+const primary = document.querySelector(".primary-content");
+const parEl = primary.querySelectorAll("p");
+console.log(parEl);
 
 /*
 Task 2
