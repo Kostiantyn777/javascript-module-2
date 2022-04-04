@@ -23,7 +23,7 @@ console.log(sequence);
 4. Create a function to add a skill to all members in a list of mentors
 
 function addSkill(mentors,newSkill){
-  //your code here
+  //your chere
 }
 
 5. Create a function to remove a skill to all members in a list of mentors
@@ -41,21 +41,20 @@ function removeSkill(mentors,newSkill){
 function addStudentLikes(mentors){
   //your code here
 }
-*/ 
+*/
 
 var mentors = [
   {
     firstName: "Antonio",
     lastName: "Miranda",
-    skills: ["JS","React","Node"],
+    skills: ["JS", "React", "Node"],
     class: "Mar1",
     studentLikes: 0,
-    job:
-      {
-        company: "Google",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    job: {
+      company: "Google",
+      position: "Senior developer",
+      city: "Barcelona",
+    },
   },
   {
     firstName: "Leo",
@@ -63,41 +62,90 @@ var mentors = [
     skills: ["Play football"],
     class: "Mar3",
     studentLikes: 0,
-    job:
-      {
-        company: "FC Barcelona",
-        position: "Player",
-        city: "Barcelona"
-      }
+    job: {
+      company: "FC Barcelona",
+      position: "Player",
+      city: "Barcelona",
+    },
   },
   {
     firstName: "John",
     lastName: "VanDamme",
-    skills: ["React","Angular","Python","Node"],
+    skills: ["React", "Angular", "Python", "Node"],
     class: "Mar4",
     studentLikes: 0,
-    job:
-      {
-        company: "Facebook",
-        position: "Software Manager",
-        city: "Chicago"
-      }
-  },  
+    job: {
+      company: "Facebook",
+      position: "Software Manager",
+      city: "Chicago",
+    },
+  },
   {
     firstName: "Giorgio",
     lastName: "Polvara",
-    skills: ["HTML","JS","React"],
+    skills: ["HTML", "JS", "React"],
     class: "Mar2",
     studentLikes: 0,
-    job:
-      {
-        company: "Amazon",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    job: {
+      company: "Amazon",
+      position: "Senior developer",
+      city: "Barcelona",
+    },
   },
-
 ];
 
 //YOUR CODE HERE
+/* 1. Loop through the array, and for each object, `console.log()` out the sentence only for
+mentors that are in Barcelona and one of the skills is React
+"Hi, my name is {firstName} {lastName}. I work in Barcelona and i know React."*/
+
+const findReactAndBarcelona = mentors.forEach((mentor) => {
+  if (mentor.job.city === "Barcelona" && mentor.skills.includes("React")) {
+    return console.log(
+      `Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`
+    );
+  }
+});
+
+/*2. To those that work in Barcelona, set "Jun1" in the class attribute, 
+and add a new skill to the list "SQL".
+To add elements in an array you can use .push()
+var animals = ["dog","cat"];
+animals.push("horse"); //["dog","cat","horse"]
+
+let sequence = [1, 2, 3];
+sequence.push(4);
+sequence.push(5);
+console.log(sequence); */
+const addNewClassAndSkill = mentors.forEach((mentor) => {
+  if (mentor.job.city === "Barcelona") {
+    mentor.skills.push("SQL");
+    mentor.class = "Jun1";
+  }
+});
+
+/*3. Create an object method with the name .addSkill() to be able to add skills from it */
+mentors.forEach((mentor) => {
+  mentor.addSkill = function (newSkill) {
+    mentor.skills.push(newSkill);
+  };
+});
+
+/*4. Create a function to add a skill to all members in a list of mentors */
+
+function addSkill(mentors, newSkill) {
+  mentors.forEach((mentor) => {
+    mentor.skills.push(newSkill);
+  });
+}
+
+/*5. Create a function to remove a skill to all members in a list of mentors*/
+function removeSkill(mentors, newSkill) {
+  mentors.forEach((mentor) => {
+    if (mentor.skills.includes(newSkill)) {
+      let elementIndex = mentor.skills.indexOf(newSkill);
+      mentor.skills.splice(elementIndex, 1);
+    }
+  });
+}
 
