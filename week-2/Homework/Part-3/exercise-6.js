@@ -149,3 +149,12 @@ function removeSkill(mentors, newSkill) {
   });
 }
 
+/*6. Create a function mentorWithMoreSkills() that returns the name of the mentor with more number of skills */
+
+function mentorWithMoreSkills(arrayOfObjects) {
+  arrayOfObjects.map((mentor) => {
+    let skills = mentor.skills.length;
+    console.log(Math.max(...skills));
+  });
+}
+mentorWithMoreSkills(mentors);
