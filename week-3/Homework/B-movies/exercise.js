@@ -113,5 +113,5 @@ function addMovie(newMovie) {
 setTimeout(() => addMovie(newMovie), 2000);
 setTimeout(() => showMovies(movies), 1000);
 
-/*    
+    
     
